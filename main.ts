@@ -15,9 +15,11 @@ basic.forever(function () {
         meteorito.change(LedSpriteProperty.Y, 1)
     }
     if (meteorito.isTouching(jokalaria)) {
+        music.startMelody(music.builtInMelody(Melodies.Baddy), MelodyOptions.Once)
         game.gameOver()
     }
     basic.pause(200)
     game.addScore(1)
+    music.startMelody(music.builtInMelody(Melodies.JumpDown), MelodyOptions.Once)
     meteorito.delete()
 })
